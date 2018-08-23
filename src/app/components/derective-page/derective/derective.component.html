@@ -1,0 +1,39 @@
+<p>
+  derective works!
+</p>
+<div class="container">
+  <div class="col-md-12">
+    <p>
+      AutoFocusDirective
+    </p>
+    <input appAutoFocus type="text" [(ngModel)]="text">
+  </div>
+</div>
+
+<div class="container">
+  <div class="col-md-12 text-center">
+    <p>
+      BgcRedDirective
+    </p>
+    <h3 appBgcRed>
+      {{headerText}}
+    </h3>
+  </div>
+</div>
+
+<div class="container">
+  <div class="col-md-12 text-center">
+    <p>
+      MouseActionDirective, Input, Output параметры
+    </p>
+    <h3 appMouseAction (pushText)="setText($event)" [getBgColor]="bgColor">
+      {{doMouseAction}}
+    </h3>
+  </div>
+  <p>
+    Выберите Hover цвет 
+  </p>
+  <button type="button" class="btn btn-primary" (click)="setBgColor('blue')">Синий</button>
+  <button type="button" class="btn btn-success"(click)="setBgColor('green')">Зеленый</button>
+  <button type="button" class="btn btn-danger"(click)="setBgColor('red')">Красный</button>
+</div>

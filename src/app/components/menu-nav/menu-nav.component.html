@@ -1,0 +1,8 @@
+<div>
+  <a *ngFor="let item of navMenu" routerLink={{item.link}}>
+    <button type="button" [disabled]="currentUrl == item.link">{{item.name}} - {{currentUrl == item.link ? 'disabled' : 'active'}}</button>
+  </a>
+</div>
+<div [ngClass]="['alert', 'alert-primary']">
+  {{currentUrl}}
+</div>

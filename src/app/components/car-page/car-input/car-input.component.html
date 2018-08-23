@@ -1,0 +1,10 @@
+<div class="container">
+  <dl [ngClass]="'row'">
+    <dt [ngClass]="['col-sm-3', 'text-right']">Имя машины</dt>
+    <dd [ngClass]="'col-sm-9'"><input [ngClass]="'form-control'" type="text" [(ngModel)]="nameCar" #refInputName></dd>
+    <dt [ngClass]="['col-sm-3', 'text-right']">Год выпуска</dt>
+    <dd [ngClass]="'col-sm-9'"><input [ngClass]="'form-control'" type="text" [(ngModel)]="yearCar"></dd>
+  </dl>
+</div>
+
+<button [ngClass]="{'btn btn-primary': true}" (click)="addCar()">{{add}}</button>

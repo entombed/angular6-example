@@ -1,0 +1,10 @@
+<app-car-input (pullCar)="addCarArrayCars($event)" ></app-car-input>
+<hr>
+<h2>
+  {{listCars}}
+</h2>
+<div [ngClass]="'list-group'">
+  <app-car-item [ngClass]="'list-group-item'" *ngFor="let car of arrayCars; let idx = index" [carItem]="car">
+    {{idx + 1}}
+  </app-car-item>
+</div>
