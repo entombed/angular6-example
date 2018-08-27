@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Car } from '@share/car';
+import { MessageService } from '@services/message.service';
 
 @Component({
   selector: 'app-cars',
@@ -10,7 +11,9 @@ export class CarsComponent implements OnInit {
 
   listCars: string;
   arrayCars: Car[]
-  constructor() { }
+  constructor(
+    private _messageService: MessageService,
+  ) { }
 
   ngOnInit() {
     this.listCars = "Список машин";
@@ -31,5 +34,12 @@ export class CarsComponent implements OnInit {
   }
   addCarArrayCars(car: Car) {
     this.arrayCars.push(car);
+  }
+  setTxt(data) {
+    console.dir(data)
+    this._messageService.setMessage(data);
+  }
+  getTxt() {
+    this._messageService.getMessage();
   }
 }

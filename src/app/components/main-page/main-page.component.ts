@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { MessageService } from '@services/message.service';
 
 @Component({
   selector: 'app-main-page',
@@ -8,10 +9,19 @@ import { Component, OnInit } from '@angular/core';
 export class MainPageComponent implements OnInit {
 
   text: string;
-  constructor() { }
+  constructor(
+    private _messageService: MessageService,
+  ) { }
 
   ngOnInit() {
     this.text = '';
   }
-  
+
+  setTxt(data) {
+    console.dir(data)
+    this._messageService.setMessage(data);
+  }
+  getTxt() {
+    this._messageService.getMessage();
+  }
 }

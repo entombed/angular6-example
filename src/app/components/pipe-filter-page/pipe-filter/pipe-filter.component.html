@@ -1,8 +1,10 @@
 <p>
   pipe-filter works!
 </p>
-<input type="text" class="form-control" appAutoFocus [(ngModel)]="filterString">
+<input type="text" class="form-control" appAutoFocus [(ngModel)]="filterString" #RefInput>
 <hr>
 <ul class="list-group">
   <li class="list-group-item" *ngFor="let car of carsArray | filterPipe:filterString:'name':false; let i = index">{{i+1}} - {{car.name}}</li>
 </ul>
+<button class="btn btn-primary" (click)="setTxt(RefInput.value)">ADD</button>
+<button class="btn btn-primary" (click)="getTxt()">SHOW</button>

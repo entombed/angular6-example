@@ -12,6 +12,7 @@ import { AppRouteModule } from './app-route/app-route.module';
 import { ShareModulesModule } from '@share/share-modules.module'
 import { ShareDirectivesModule } from '@share/share-directives.module';
 import { SharePipesModule } from '@share/share-pipes.module';
+// import { MessageService } from '@services/message.service';
 
 
 
@@ -32,7 +33,9 @@ import { SharePipesModule } from '@share/share-pipes.module';
     SharePipesModule,
     AppRouteModule,
   ],
-  providers: [],
+  providers: [
+    // MessageService
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

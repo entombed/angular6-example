@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { FilterPipePipe } from '../pipes/filter-pipe.pipe';
+import { FilterPipePipe } from '@pipes/filter-pipe.pipe';
 
 @NgModule({
   imports: [
