@@ -18,6 +18,7 @@ export class PageBComponent extends PageBaseComponent implements OnInit {
 
   ngOnInit() {
     // this.msgTxt = 'QQQQQQQQQQQQQQQQQ';
+    console.log('extends page b')
   }
 
 }

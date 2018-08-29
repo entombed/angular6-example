@@ -5,17 +5,21 @@ import { Component, OnInit } from '@angular/core';
   templateUrl: './page-base.component.html',
   styleUrls: ['./page-base.component.css']
 })
-export class PageBaseComponent implements OnInit {
+export class PageBaseComponent {
 
   public msgTxt: string = 'BASE PAGE';
+  public inputTxt: string
 
   constructor() { }
 
-  ngOnInit() {
-  }
-
-  showMsg() {
-    console.log(this.msgTxt);
+  public showMsg(data?) {
+    if (data.length === 0) {
+      data = this.msgTxt;
+      this.inputTxt = this.msgTxt;
+    } else {
+      this.inputTxt = data
+    }
+    console.log(data);
   }
 
 }

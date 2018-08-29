@@ -1,4 +1,9 @@
 <p>
   page-b works!
 </p>
-<button (click)="showMsg()">CLICK</button>
+<input type="text" #refInput>
+<button (click)="showMsg(refInput.value)">CLICK</button>
+
+<p>
+  {{inputTxt}}
+</p>
