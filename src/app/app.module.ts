@@ -8,12 +8,14 @@ import { MainPageComponent } from '@components/main-page/main-page.component';
 import { CarsModule } from '@components/car-page/cars.module';
 import { DerectiveModule } from '@components/derective-page/derective.module';
 import { PipeFilterModule } from './components/pipe-filter-page/pipe-filter.module';
+
 import { AppRouteModule } from './app-route/app-route.module';
 import { ShareModulesModule } from '@share/share-modules.module'
 import { ShareDirectivesModule } from '@share/share-directives.module';
 import { SharePipesModule } from '@share/share-pipes.module';
-// import { MessageService } from '@services/message.service';
+import { ExtendedPageModule } from '@components/extended-page/extended-page.module';
 
+import { MessageService } from '@services/message.service';
 
 
 @NgModule({
@@ -31,10 +33,11 @@ import { SharePipesModule } from '@share/share-pipes.module';
     ShareModulesModule,
     ShareDirectivesModule,
     SharePipesModule,
+    ExtendedPageModule,
     AppRouteModule,
   ],
   providers: [
-    // MessageService
+    MessageService
   ],
   bootstrap: [AppComponent]
 })

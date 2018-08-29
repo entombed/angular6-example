@@ -49,7 +49,7 @@ export class FormComponent implements OnInit {
   submitForm() {
     if(this.registrationForm.valid) {
       console.log('-------------------------');
-      console.dir(this.registrationForm.value);
+      console.dir(this.registrationForm);
     }
 
   }

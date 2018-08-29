@@ -5,7 +5,7 @@ import { PipeFilterRouteModule } from './pipe-filter-route/pipe-filter-route.mod
 import { ShareModulesModule } from '@share/share-modules.module';
 import { ShareDirectivesModule } from '@share/share-directives.module';
 import { SharePipesModule } from '@share/share-pipes.module';
-import { MessageService } from '@services/message.service';
+// import { MessageService } from '@services/message.service';
 
 @NgModule({
   imports: [
@@ -19,7 +19,7 @@ import { MessageService } from '@services/message.service';
     PipeFilterComponent
   ],
   providers:[
-    MessageService
+    // MessageService
   ]
 })
 export class PipeFilterModule { }

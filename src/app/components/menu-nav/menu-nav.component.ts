@@ -54,6 +54,14 @@ export class MenuNavComponent implements OnInit {
         "name": "app-pipe-filter",
         "link": "/pipeFilter"
       },
+      {
+        "name": "app-page-a",
+        "link": "/page-a"
+      },
+      {
+        "name": "app-page-b",
+        "link": "/page-b"
+      },
     ];
   }
 
