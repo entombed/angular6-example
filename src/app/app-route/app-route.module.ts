@@ -8,7 +8,7 @@ import { FormComponent } from '@components/form/form.component';
 const appRoutes: Routes = [
   { path: '', component: MainPageComponent },
   { path: 'form', component: FormComponent },
-  { path: '**', component: MainPageComponent }
+  // { path: '**', component: MainPageComponent }
 ];
 
 @NgModule({

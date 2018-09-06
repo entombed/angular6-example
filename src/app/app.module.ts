@@ -1,5 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import { ReactiveFormsModule } from '@angular/forms';
 
 import { AppComponent } from './app.component';
 import { FormComponent } from '@components/form/form.component';
@@ -8,8 +9,9 @@ import { MainPageComponent } from '@components/main-page/main-page.component';
 import { CarsModule } from '@components/car-page/cars.module';
 import { DerectiveModule } from '@components/derective-page/derective.module';
 import { PipeFilterModule } from './components/pipe-filter-page/pipe-filter.module';
-
+import { ReactiveFormModule } from './components/form-reactive-page/reactive-form.module';
 import { AppRouteModule } from './app-route/app-route.module';
+
 import { ShareModulesModule } from '@share/share-modules.module'
 import { ShareDirectivesModule } from '@share/share-directives.module';
 import { SharePipesModule } from '@share/share-pipes.module';
@@ -27,6 +29,7 @@ import { MessageService } from '@services/message.service';
   ],
   imports: [
     BrowserModule,
+    ReactiveFormsModule,
     CarsModule,
     DerectiveModule,
     PipeFilterModule,
@@ -34,6 +37,7 @@ import { MessageService } from '@services/message.service';
     ShareDirectivesModule,
     SharePipesModule,
     ExtendedPageModule,
+    ReactiveFormModule,
     AppRouteModule,
   ],
   providers: [
