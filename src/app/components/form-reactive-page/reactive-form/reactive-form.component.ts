@@ -1,26 +1,27 @@
-import { Component, OnInit } from '@angular/core';
-import { FormGroup, FormControl, Validators } from '@angular/forms';
+import { Component, OnInit, OnChanges } from '@angular/core';
+import { FormGroup, FormControl, Validators, FormBuilder } from '@angular/forms';
 
 @Component({
   selector: 'app-reactive-form',
   templateUrl: './reactive-form.component.html',
   styleUrls: ['./reactive-form.component.css']
 })
-export class ReactiveFormComponent implements OnInit {
+export class ReactiveFormComponent implements OnInit, OnChanges {
 
   countrys: any[];
   answers: any[];
   userForm: FormGroup;
-
-  // registrationForm: FormGroup;
-  // firstName: FormControl;
-  // lastName: FormControl;
-  // email: FormControl;
-  // password: FormControl;
+  checked: boolean = true;
+  count: { value: number; label: string; }[];
+  chk: any;
 
   constructor() {
   }
 
+  ngOnChanges () {
+   
+  }
+  
   ngOnInit() {
     this.countrys = [
       {
@@ -48,22 +49,50 @@ export class ReactiveFormComponent implements OnInit {
       }
     ];
 
+    this.count = [
+      {
+        value: 1,
+        label: "Один"
+      },
+      {
+        value: 2,
+        label: "Два"
+      },
+      {
+        value: 3,
+        label: "Три"
+      }
+    ];
+
+    this.chk = [this.count[0]];
+
     this.userForm = new FormGroup({
       userLogin: new FormControl('!!!!!!!!!!!!!!!!!'),
       userPassword: new FormControl(''),
       userCountry: new FormControl('by'),
       userAnswer: new FormControl('n'),
-      // userCheckRange: new FormControl(true),
-      userRange: new FormControl({value:10, disabled: false}),
-      userText: new FormControl(''), 
+      userCheckRange: new FormControl(false),
+      userRange: new FormControl({value:10, disabled: true}),
+      userText: new FormControl(''),
+      userCount: new FormControl([[this.count[0]]])
     });
-
-    
 
   }
 
   submitUserForm() {
     console.dir(this.userForm)
+  }
+
+  change(event) {
+    if (this.userForm.get('userCheckRange').value) {
+      this.userForm.get('userRange').enable();
+    } else {
+      this.userForm.get('userRange').disable();
+    }
+  }
+
+  changeCount(event) {
+    console.dir(event)
   }
 
 }

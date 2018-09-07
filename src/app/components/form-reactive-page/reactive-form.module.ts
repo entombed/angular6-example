@@ -3,7 +3,7 @@ import { CommonModule } from '@angular/common';
 import { ShareModulesModule } from '@share/share-modules.module';
 import { ShareDirectivesModule } from '@share/share-directives.module';
 import { SharePipesModule } from '@share/share-pipes.module';
-import { ReactiveFormsModule, FormBuilder } from '@angular/forms';
+// import { ReactiveFormsModule, FormBuilder } from '@angular/forms';
 import { ReactiveFormComponent } from './reactive-form/reactive-form.component';
 import { ReactiveFormRouteModule } from './reactive-form-route/reactive-form-route.module';
 
@@ -11,7 +11,7 @@ import { ReactiveFormRouteModule } from './reactive-form-route/reactive-form-rou
 @NgModule({
   imports: [
     CommonModule,
-    ReactiveFormsModule,
+    // ReactiveFormsModule,
     ShareModulesModule,
     ShareDirectivesModule,
     SharePipesModule,

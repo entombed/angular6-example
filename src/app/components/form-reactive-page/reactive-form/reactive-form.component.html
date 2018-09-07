@@ -30,15 +30,16 @@
     <label class="form-check-label">{{ans.label}}</label>
   </div>
 
-  <!-- <div class="alert alert-warning" role="alert">
+  <div class="alert alert-warning" role="alert">
       активировать ползунок
     <div class="form-check">
-      <input class="form-check-input" type="checkbox" id="activate-range" binary="true" formControlName="userCheckRange" (clikc)="chandeStatus()"> 
+      <!-- <input class="form-check-input" type="checkbox" id="activate-range" binary="true" formControlName="userCheckRange">  -->
+      <p-checkbox class="form-check-input" type="checkbox" binary="true" formControlName="userCheckRange" (onChange)="change($event)" inputId="activate-range"></p-checkbox>
       <label class="form-check-label" for="activate-range">
         Включить
       </label>
     </div>
-  </div> -->
+  </div>
 
   <div class="form-group">
     <input type="range" class="form-control-range" list="tickmarks" step="1" formControlName="userRange">
@@ -64,6 +65,11 @@
     <textarea class="form-control" aria-label="With textarea" formControlName="userText"></textarea> 
   </div>
 
+  <div *ngFor="let item of count; index as idx" class="form-check">
+    <p-checkbox value="{{item.value}}" label="{{item.label}}" formControlName="userCount" (onChange)="changeCount(item.value)" inputId="countCh_{{idx}}" name="groupname" ></p-checkbox>
+  </div>
+
 
   <button type="submit" class="btn btn-default">Отправить</button>
 </form>
+
