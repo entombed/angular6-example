@@ -74,7 +74,7 @@ export class ReactiveFormComponent implements OnInit, OnChanges {
       userCheckRange: new FormControl(false),
       userRange: new FormControl({value:10, disabled: true}),
       userText: new FormControl(''),
-      userCount: new FormControl([[this.count[0]]])
+      userCount: new FormControl([])
     });
 
   }
