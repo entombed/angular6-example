@@ -3,3 +3,8 @@
 {
   width: 7em;
 }
+
+.has-error .form-control {
+  border-color: #fa4949bf;
+  box-shadow: 1px 1px 10px 0px #fa4949bf;
+}

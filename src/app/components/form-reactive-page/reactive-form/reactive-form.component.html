@@ -2,27 +2,67 @@
   reactive-form works!
 </p>
 <form [formGroup]="userForm" (ngSubmit)="submitUserForm()">
-  <div class="input-group input-group-sm mb-3">
-    <div class="input-group-prepend">
-      <span class="input-group-text" id="login">Login</span>
+  <div formGroupName="userAuth">
+    <div class="container">
+      <div class="row no-gutters">
+        <div class="col-10">
+          <div class="input-group input-group-sm mb-3" [ngClass]="{'has-error': userForm.get('userAuth.userLogin').invalid && userForm.get('userAuth.userLogin').touched }">
+            <div class="input-group-prepend">
+              <span class="input-group-text" id="login">Login</span>
+            </div>
+            <input type="text" class="form-control" formControlName="userLogin">
+          </div>
+        </div>
+        <div class="col-2">
+          <span *ngIf="userForm.get('userAuth.userLogin').errors && userForm.get('userAuth.userLogin').touched"><i class="pi pi-exclamation-triangle"
+              style="font-size: 2em"></i></span>
+          <span *ngIf="userForm.get('userAuth.userLogin').valid && userForm.get('userAuth.userLogin').touched"><i class="pi pi-check"
+              style="font-size: 2em"></i></span>
+          <span *ngIf="pendingEmail"><i class="pi pi-spin pi-spinner" style="font-size: 2em"></i></span>
+        </div>
+        <div class="w-100"></div>
+        <div class="col-10">
+          <div class="input-group input-group-sm mb-3" [ngClass]="{'has-error': userForm.get('userAuth.userPassword').invalid && userForm.get('userAuth.userPassword').touched }">
+            <div class="input-group-prepend">
+              <span class="input-group-text" id="password">Password</span>
+            </div>
+            <input type="password" class="form-control" formControlName="userPassword">
+          </div>
+        </div>
+        <div class="col-2">
+          <span *ngIf="userForm.get('userAuth.userPassword').errors && userForm.get('userAuth.userPassword').errors['required'] && userForm.get('userAuth.userPassword').touched"><i
+              class="pi pi-exclamation-triangle" style="font-size: 2em"></i></span>
+          <span *ngIf="userForm.get('userAuth.userPassword').valid && userForm.get('userAuth.userPassword').touched"><i class="pi pi-check"
+              style="font-size: 2em"></i></span>
+        </div>
+      </div>
     </div>
-    <input type="text" class="form-control" formControlName="userLogin">
+
+
+    <!-- <div class="input-group input-group-sm mb-3" [ngClass]="{'has-error': userForm.get('userAuth.userLogin').invalid && userForm.get('userAuth.userLogin').touched }">
+      <div class="input-group-prepend">
+        <span class="input-group-text" id="login">Login</span>
+      </div>
+      <input type="text" class="form-control" formControlName="userLogin">
+    </div> -->
+
+    <!-- <div class="input-group input-group-sm mb-3" [ngClass]="{'has-error': userForm.get('userAuth.userPassword').invalid && userForm.get('userAuth.userPassword').touched }">
+      <div class="input-group-prepend">
+        <span class="input-group-text" id="password">Password</span>
+      </div>
+      <input type="password" class="form-control" formControlName="userPassword">
+    </div> -->
   </div>
-  <div class="input-group input-group-sm mb-3">
-    <div class="input-group-prepend">
-      <span class="input-group-text" id="password">Password</span>
-    </div>
-    <input type="password" class="form-control" formControlName="userPassword">
-  </div>
+
   <div class="form-group">
     <label>Выберете страну</label>
     <select class="form-control" formControlName="userCountry">
-      <option *ngFor="let country of countrys" [value]="country.value" >{{country.name}}</option>
+      <option *ngFor="let country of countrys" [value]="country.value">{{country.name}}</option>
     </select>
   </div>
 
   <div class="alert alert-primary" role="alert">
-      Согласны на обработку данных?
+    Согласны на обработку данных?
   </div>
 
   <div class="form-check" *ngFor="let ans of answers">
@@ -31,13 +71,10 @@
   </div>
 
   <div class="alert alert-warning" role="alert">
-      активировать ползунок
+    активировать ползунок
     <div class="form-check">
-      <!-- <input class="form-check-input" type="checkbox" id="activate-range" binary="true" formControlName="userCheckRange">  -->
-      <p-checkbox class="form-check-input" type="checkbox" binary="true" formControlName="userCheckRange" (onChange)="change($event)" inputId="activate-range"></p-checkbox>
-      <label class="form-check-label" for="activate-range">
-        Включить
-      </label>
+      <input class="form-check-input" type="checkbox" id="activate-range" formControlName="userCheckRange" (ngModelChange)="checkerAction($event, 'statusRange')">
+      <label class="form-check-label" for="activate-range">Включить</label>
     </div>
   </div>
 
@@ -45,16 +82,16 @@
     <input type="range" class="form-control-range" list="tickmarks" step="1" formControlName="userRange">
     <datalist id="tickmarks">
       <option value="0" label="0%">
-      <option value="10">
-      <option value="20">
-      <option value="30">
-      <option value="40">
-      <option value="50" label="50%">
-      <option value="60">
-      <option value="70">
-      <option value="80">
-      <option value="90">
-      <option value="100" label="100%">
+        <option value="10">
+          <option value="20">
+            <option value="30">
+              <option value="40">
+                <option value="50" label="50%">
+                  <option value="60">
+                    <option value="70">
+                      <option value="80">
+                        <option value="90">
+                          <option value="100" label="100%">
     </datalist>
   </div>
 
@@ -62,14 +99,15 @@
     <div class="input-group-prepend">
       <span class="input-group-text">With textarea</span>
     </div>
-    <textarea class="form-control" aria-label="With textarea" formControlName="userText"></textarea> 
+    <textarea class="form-control" aria-label="With textarea" formControlName="userText"></textarea>
   </div>
 
   <div *ngFor="let item of count; index as idx" class="form-check">
-    <p-checkbox value="{{item.value}}" label="{{item.label}}" formControlName="userCount" (onChange)="changeCount(item.value)" inputId="countCh_{{idx}}" name="groupname" ></p-checkbox>
+    <input type="checkbox" value="{{item.value}}" formControlName="userCount" (ngModelChange)="checkerAction($event, 'checkBoxCount')">
+    <label id="countCh_{{idx}}" class="form-check-label" for="activate-range">{{item.label}}</label>
   </div>
 
 
   <button type="submit" class="btn btn-default">Отправить</button>
+  <button type="submit" class="btn btn-default" [disabled]="userForm.invalid">Отправить</button>
 </form>
-
