@@ -65,6 +65,10 @@ export class MenuNavComponent implements OnInit {
       {
         "name": "app-reactive-form",
         "link": "/reactiveForm"
+      },
+      {
+        "name": "app-client-server",
+        "link": "/clientServer"
       }
     ];
   }

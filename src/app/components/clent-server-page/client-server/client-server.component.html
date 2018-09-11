@@ -1,0 +1,7 @@
+<button class="btn btn-default">Загрузить машину</button>
+<hr>
+<ul class="list-group">
+  <li class="list-group-item" *ngFor="let car of cars">
+    <span class="badge badge-primary">{{car.id}}</span>{{car.name}} {{car.color}}
+  </li>
+</ul>

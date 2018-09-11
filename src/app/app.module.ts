@@ -10,6 +10,7 @@ import { CarsModule } from '@components/car-page/cars.module';
 import { DerectiveModule } from '@components/derective-page/derective.module';
 import { PipeFilterModule } from './components/pipe-filter-page/pipe-filter.module';
 import { ReactiveFormModule } from './components/form-reactive-page/reactive-form.module';
+import { ClientServerModule } from '@components/clent-server-page/client-server.module';
 import { AppRouteModule } from './app-route/app-route.module';
 
 import { ShareModulesModule } from '@share/share-modules.module'
@@ -38,6 +39,7 @@ import { MessageService } from '@services/message.service';
     SharePipesModule,
     ExtendedPageModule,
     ReactiveFormModule,
+    ClientServerModule,
     AppRouteModule,
   ],
   providers: [
