@@ -1,6 +1,7 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { ReactiveFormsModule } from '@angular/forms';
+import { HttpModule } from '@angular/http';
 
 import { AppComponent } from './app.component';
 import { FormComponent } from '@components/form/form.component';
@@ -32,6 +33,7 @@ import { CarsService } from '@services/cars.service';
   imports: [
     BrowserModule,
     ReactiveFormsModule,
+    HttpModule,
     CarsModule,
     DerectiveModule,
     PipeFilterModule,

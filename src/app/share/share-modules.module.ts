@@ -4,7 +4,7 @@ import { FormsModule } from '@angular/forms';
 import { ReactiveFormsModule } from '@angular/forms';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { CheckboxModule } from 'primeng/checkbox';
-import { HttpModule } from '@angular/http';
+// import { HttpModule } from '@angular/http';
 
 @NgModule({
   imports: [
@@ -13,7 +13,7 @@ import { HttpModule } from '@angular/http';
     ReactiveFormsModule,
     BrowserAnimationsModule,
     CheckboxModule,
-    HttpModule
+    // HttpModule
   ],
   declarations: [
   ],
@@ -22,7 +22,7 @@ import { HttpModule } from '@angular/http';
     FormsModule,
     BrowserAnimationsModule,
     CheckboxModule,
-    HttpModule
+    // HttpModule
   ]
 })
 export class ShareModulesModule { }
