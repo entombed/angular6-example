@@ -19,6 +19,7 @@ import { SharePipesModule } from '@share/share-pipes.module';
 import { ExtendedPageModule } from '@components/extended-page/extended-page.module';
 
 import { MessageService } from '@services/message.service';
+import { CarsService } from '@services/cars.service';
 
 
 @NgModule({
@@ -43,7 +44,8 @@ import { MessageService } from '@services/message.service';
     AppRouteModule,
   ],
   providers: [
-    MessageService
+    MessageService,
+    CarsService
   ],
   bootstrap: [AppComponent]
 })

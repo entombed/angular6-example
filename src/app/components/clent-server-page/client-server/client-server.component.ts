@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import {CarsService} from '@services/cars.service';
 
 @Component({
   selector: 'app-client-server',
@@ -6,19 +7,21 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./client-server.component.css']
 })
 export class ClientServerComponent implements OnInit {
-  
+
   cars: { id: number; name: string; color: string; }[];
 
-  constructor() { }
+  constructor(
+    private _carsService: CarsService,
+  ) { }
 
   ngOnInit() {
-    this.cars = [
-      {
-        id: 1,
-        name: 'Ford',
-        color: 'white'
-      }
-    ]
+
+  }
+
+  loadCars() {
+    this._carsService.getCars().subscribe((data) => {
+      console.log(data)
+    });
   }
 
 }
