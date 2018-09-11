@@ -40,7 +40,9 @@ export class ClientServerComponent implements OnInit {
   }
 
   changeColor(car: CarDB) {
-    const randomColor = Math.round(Math.random() * this.colors.length - 1);
+    const randomColor = Math.round(Math.random() * (this.colors.length - 1));
+
+    console.log(this.colors[randomColor], randomColor)
     car.color = this.colors[randomColor];
     this._carsService.putColor(car).subscribe();
   }
