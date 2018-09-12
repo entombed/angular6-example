@@ -24,9 +24,14 @@ export class ClientServerComponent implements OnInit {
   }
 
   loadCars() {
-    this._carsService.get().subscribe((data: CarDB[]) => {
-      this.cars = data;
-    });
+    this._carsService.get().subscribe(
+      (data: CarDB[]) => {
+        this.cars = data;
+      },
+      (error) => {
+        alert(error);
+      }
+    );
   }
 
   postCar() {
@@ -35,7 +40,7 @@ export class ClientServerComponent implements OnInit {
       color: this.carColor
     }
     this._carsService.post(this.carObj).subscribe(() => {
-      this.loadCars()
+      this.loadCars();
     });
   }
 
@@ -45,5 +50,14 @@ export class ClientServerComponent implements OnInit {
     console.log(this.colors[randomColor], randomColor)
     car.color = this.colors[randomColor];
     this._carsService.putColor(car).subscribe();
+  }
+
+  deleteCar(car: CarDB) {
+    console.log(car);
+    this._carsService.delete(car).subscribe(() => {
+      this.cars = this.cars.filter((item)=> {
+        return item.id !== car.id;
+      })
+    });
   }
 }

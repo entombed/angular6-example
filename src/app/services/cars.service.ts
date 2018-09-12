@@ -1,7 +1,8 @@
 import { Injectable } from '@angular/core';
 import { Http } from '@angular/http';
-import {Response} from '@angular/http';
-import { map } from 'rxjs/operators';
+import { Response } from '@angular/http';
+import { map, catchError, delay } from 'rxjs/operators';
+import { Observable, throwError } from 'rxjs';
 
 
 @Injectable({
@@ -14,9 +15,15 @@ export class CarsService {
   ) { }
 
   get() {
-    return this.http.get("http://localhost:3000/cars").pipe(map((data: Response) => {
-      return data.json();
-    }));
+    return this.http.get("http://localhost:3000/cars").pipe(
+      map((data: Response) => {
+        return data.json();
+      }),
+      catchError((error) => {
+        console.log(error)
+        return throwError(error)
+      })
+    );
   }
 
   post(data) {
@@ -27,6 +34,12 @@ export class CarsService {
 
   putColor(car) {
     return this.http.put(`http://localhost:3000/cars/${car.id}`, car).pipe(map((data: Response) => {
+      return data.json();
+    }));
+  }
+
+  delete(car) {
+    return this.http.delete(`http://localhost:3000/cars/${car.id}`).pipe(map((data: Response) => {
       return data.json();
     }));
   }
