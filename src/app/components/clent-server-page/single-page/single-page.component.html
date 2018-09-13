@@ -3,12 +3,12 @@
     Информация о машине
   </h3>
   <dl class="row">
-    <dt class="col-sm-3">Имя машины</dt>
-    <dd class="col-sm-9">{{car.name}}</dd>
-    <dt class="col-sm-3">Цвет</dt>
-    <dd class="col-sm-9">{{car.color}}</dd>
-    <dt class="col-sm-3">ID</dt>
-    <dd class="col-sm-9">{{car.id}}</dd>
+    <dt class="col-sm-6">Имя машины</dt>
+    <dd class="col-sm-6">{{car.name}}</dd>
+    <dt class="col-sm-6">Цвет</dt>
+    <dd class="col-sm-6" [ngStyle]="{'background-color': car.color, 'color': '#fff'}">{{car.color}}</dd>
+    <dt class="col-sm-6">ID</dt>
+    <dd class="col-sm-6">{{car.id}}</dd>
   </dl>
 </div>
 

@@ -6,19 +6,9 @@
       "id": 3
     },
     {
-      "name": "MAZDA",
-      "color": "red",
-      "id": 4
-    },
-    {
       "name": "LADA",
-      "color": "green",
+      "color": "yellow",
       "id": 5
-    },
-    {
-      "name": "sss",
-      "color": "ssss",
-      "id": 6
     }
   ]
 }

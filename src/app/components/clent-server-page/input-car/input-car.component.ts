@@ -27,8 +27,8 @@ export class InputCarComponent implements OnInit {
       color: this.carColor
     }
     this._carsService.post(this.carObj).subscribe(() => {
+      this.refresh.emit();
     });
-    console.log("----------")
-    this.refresh.emit();
+
   }
 }
