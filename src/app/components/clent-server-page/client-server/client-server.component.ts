@@ -19,7 +19,7 @@ export class ClientServerComponent implements OnInit {
   ) { }
   
   ngOnInit() {
-
+    this.loadCars()
   }
 
   loadCars() {
@@ -58,5 +58,10 @@ export class ClientServerComponent implements OnInit {
         return item.id !== car.id;
       })
     });
+  }
+
+  catche() {
+    console.log("CATCHE")
+    this.loadCars()
   }
 }

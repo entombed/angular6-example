@@ -1,15 +1,23 @@
 
-<app-input-car></app-input-car>
+<app-input-car (refresh)="catche($event)"></app-input-car>
 
 <hr>
 <button class="btn btn-default"(click)="loadCars()">Загрузить машину</button>
 <hr>
-<ul class="list-group">
-  <li class="list-group-item" *ngFor="let car of cars">
-      <button class="btn btn-info" (click)="changeColor(car)"><i class="pi pi-pencil"></i></button>
-      <button class="btn btn-danger" (click)="deleteCar(car)"><i class="pi pi-minus"></i></button>
-      <button class="btn btn-default"><i class="pi pi-search"></i></button>
-      <a [routerLink]="['/clientServer', car.id]">{{car.name}}</a>
-      <span class="badge badge-primary" [ngStyle]="{'background-color': car.color}">{{car.id}}</span>
-  </li>
-</ul>
+<div class="row">
+  <div class="col-md-6">
+    <ul class="list-group">
+      <li class="list-group-item" *ngFor="let car of cars">
+        <button class="btn btn-info" (click)="changeColor(car)"><i class="pi pi-pencil"></i></button>
+        <button class="btn btn-danger" (click)="deleteCar(car)"><i class="pi pi-minus"></i></button>
+        <button class="btn btn-default"><i class="pi pi-search"></i></button>
+        <a [routerLink]="['/clientServer', car.id]">{{car.name}}</a>
+        <span class="badge badge-primary" [ngStyle]="{'background-color': car.color}">{{car.id}}</span>
+      </li>
+    </ul>
+  </div>
+  <div class="col-md-6">
+    <router-outlet></router-outlet>
+  </div>
+</div>
+

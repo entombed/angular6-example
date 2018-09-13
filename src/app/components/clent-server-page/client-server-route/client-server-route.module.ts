@@ -7,8 +7,11 @@ import { ClientServerComponent } from '@components/clent-server-page/client-serv
 import { SinglePageComponent } from '@components/clent-server-page/single-page/single-page.component';
 
 const appRoutes: Routes = [
-  { path: 'clientServer', component: ClientServerComponent },
-  { path: 'clientServer/:id', component: SinglePageComponent },
+  { path: 'clientServer', component: ClientServerComponent, 
+    children: [
+      { path: ':id', component: SinglePageComponent}
+    ]
+  },
 ];
 
 @NgModule({

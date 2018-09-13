@@ -1,8 +1,10 @@
 <div *ngIf="car">
-  <h2>
-    Информация о машине {{car.name}}
-  </h2>
+  <h3>
+    Информация о машине
+  </h3>
   <dl class="row">
+    <dt class="col-sm-3">Имя машины</dt>
+    <dd class="col-sm-9">{{car.name}}</dd>
     <dt class="col-sm-3">Цвет</dt>
     <dd class="col-sm-9">{{car.color}}</dd>
     <dt class="col-sm-3">ID</dt>
@@ -10,5 +12,3 @@
   </dl>
 </div>
 
-<hr>
-<app-client-server></app-client-server>

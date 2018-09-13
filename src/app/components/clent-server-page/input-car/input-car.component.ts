@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Output, EventEmitter } from '@angular/core';
 import {CarsService} from '@services/cars.service';
 import {CarDB} from '@share/car';
 
@@ -16,7 +16,7 @@ export class InputCarComponent implements OnInit {
   constructor(
     private _carsService: CarsService,
   ) { }
-
+  @Output() refresh = new EventEmitter();
   ngOnInit() {
   }
 
@@ -28,5 +28,7 @@ export class InputCarComponent implements OnInit {
     }
     this._carsService.post(this.carObj).subscribe(() => {
     });
+    console.log("----------")
+    this.refresh.emit();
   }
 }
