@@ -7,6 +7,8 @@ import { SharePipesModule } from '@share/share-pipes.module';
 
 import { ClientServerComponent } from './client-server/client-server.component';
 import { ClientServerRouteModule } from './client-server-route/client-server-route.module';
+import { SinglePageComponent } from './single-page/single-page.component';
+import { InputCarComponent } from './input-car/input-car.component';
 
 @NgModule({
   imports: [
@@ -17,7 +19,9 @@ import { ClientServerRouteModule } from './client-server-route/client-server-rou
     ClientServerRouteModule
   ],
   declarations: [
-    ClientServerComponent
+    ClientServerComponent,
+    SinglePageComponent,
+    InputCarComponent
   ]
 })
 export class ClientServerModule { }

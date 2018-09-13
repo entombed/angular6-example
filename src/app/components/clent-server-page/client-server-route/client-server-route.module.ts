@@ -4,9 +4,11 @@ import { CommonModule } from '@angular/common';
 import { Routes, RouterModule } from '@angular/router';
 
 import { ClientServerComponent } from '@components/clent-server-page/client-server/client-server.component';
+import { SinglePageComponent } from '@components/clent-server-page/single-page/single-page.component';
 
 const appRoutes: Routes = [
   { path: 'clientServer', component: ClientServerComponent },
+  { path: 'clientServer/:id', component: SinglePageComponent },
 ];
 
 @NgModule({

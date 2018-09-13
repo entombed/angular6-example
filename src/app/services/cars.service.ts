@@ -43,4 +43,17 @@ export class CarsService {
       return data.json();
     }));
   }
+
+
+  getSingleCar(id) {
+    return this.http.get(`http://localhost:3000/cars/${id}`).pipe(
+      map((data: Response) => {
+        return data.json();
+      }),
+      catchError((error) => {
+        console.log(error)
+        return throwError(error)
+      })
+    );
+  }
 }

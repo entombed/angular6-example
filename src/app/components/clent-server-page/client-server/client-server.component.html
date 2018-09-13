@@ -1,13 +1,15 @@
-<input class="form-control" type="text" [(ngModel)]="carName">
-<input class="form-control" type="text" [(ngModel)]="carColor">
+
+<app-input-car></app-input-car>
+
 <hr>
 <button class="btn btn-default"(click)="loadCars()">Загрузить машину</button>
-<button class="btn btn-primary"(click)="postCar()">Добавить машину</button>
 <hr>
 <ul class="list-group">
   <li class="list-group-item" *ngFor="let car of cars">
       <button class="btn btn-info" (click)="changeColor(car)"><i class="pi pi-pencil"></i></button>
       <button class="btn btn-danger" (click)="deleteCar(car)"><i class="pi pi-minus"></i></button>
-      <span class="badge badge-primary" [ngStyle]="{'background-color': car.color}">{{car.id}}</span>{{car.name}} {{car.color}}
+      <button class="btn btn-default"><i class="pi pi-search"></i></button>
+      <a [routerLink]="['/clientServer', car.id]">{{car.name}}</a>
+      <span class="badge badge-primary" [ngStyle]="{'background-color': car.color}">{{car.id}}</span>
   </li>
 </ul>

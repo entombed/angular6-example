@@ -10,15 +10,14 @@ import {CarDB} from '@share/car';
 export class ClientServerComponent implements OnInit {
 
   cars: CarDB[];
-  carObj: CarDB;
-  carName: string;
-  carColor: string
+  // carObj: CarDB;
+  // carName: string;
+  // carColor: string
   colors: string[] = ["red", "blue", "yellow", "black", "green"];
-
   constructor(
     private _carsService: CarsService,
   ) { }
-
+  
   ngOnInit() {
 
   }
@@ -34,15 +33,15 @@ export class ClientServerComponent implements OnInit {
     );
   }
 
-  postCar() {
-    this.carObj = {
-      name: this.carName,
-      color: this.carColor
-    }
-    this._carsService.post(this.carObj).subscribe(() => {
-      this.loadCars();
-    });
-  }
+  // postCar() {
+  //   this.carObj = {
+  //     name: this.carName,
+  //     color: this.carColor
+  //   }
+  //   this._carsService.post(this.carObj).subscribe(() => {
+  //     this.loadCars();
+  //   });
+  // }
 
   changeColor(car: CarDB) {
     const randomColor = Math.round(Math.random() * (this.colors.length - 1));

@@ -1,0 +1,14 @@
+<div *ngIf="car">
+  <h2>
+    Информация о машине {{car.name}}
+  </h2>
+  <dl class="row">
+    <dt class="col-sm-3">Цвет</dt>
+    <dd class="col-sm-9">{{car.color}}</dd>
+    <dt class="col-sm-3">ID</dt>
+    <dd class="col-sm-9">{{car.id}}</dd>
+  </dl>
+</div>
+
+<hr>
+<app-client-server></app-client-server>
