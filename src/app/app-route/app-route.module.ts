@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { Routes, RouterModule } from '@angular/router';
+import { Routes, RouterModule, PreloadAllModules } from '@angular/router';
 
 import { MainPageComponent } from '@components/main-page/main-page.component';
 import { FormComponent } from '@components/form/form.component';
@@ -15,7 +15,9 @@ const appRoutes: Routes = [
 @NgModule({
   imports: [
     CommonModule,
-    RouterModule.forRoot(appRoutes)
+    RouterModule.forRoot(appRoutes, {
+      preloadingStrategy: PreloadAllModules,
+    })
   ],
   declarations: [],
   exports: [
