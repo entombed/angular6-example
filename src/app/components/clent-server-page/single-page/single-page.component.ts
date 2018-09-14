@@ -19,8 +19,6 @@ export class SinglePageComponent implements OnInit {
   ) { }
 
   ngOnInit() {
-    // console.log(this.route.snapshot.params);
-    // this.id = this.route.snapshot.params['id'];
     this.getIdOfCar()
   }
 

@@ -1,4 +1,5 @@
 import { BrowserModule } from '@angular/platform-browser';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { NgModule } from '@angular/core';
 import { ReactiveFormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
@@ -11,7 +12,7 @@ import { CarsModule } from '@components/car-page/cars.module';
 import { DerectiveModule } from '@components/derective-page/derective.module';
 import { PipeFilterModule } from './components/pipe-filter-page/pipe-filter.module';
 import { ReactiveFormModule } from './components/form-reactive-page/reactive-form.module';
-import { ClientServerModule } from '@components/clent-server-page/client-server.module';
+// import { ClientServerModule } from '@components/clent-server-page/client-server.module';
 import { AppRouteModule } from './app-route/app-route.module';
 
 import { ShareModulesModule } from '@share/share-modules.module'
@@ -32,6 +33,7 @@ import { CarsService } from '@services/cars.service';
   ],
   imports: [
     BrowserModule,
+    BrowserAnimationsModule,
     ReactiveFormsModule,
     HttpModule,
     CarsModule,
@@ -42,7 +44,7 @@ import { CarsService } from '@services/cars.service';
     SharePipesModule,
     ExtendedPageModule,
     ReactiveFormModule,
-    ClientServerModule,
+    // ClientServerModule,
     AppRouteModule,
   ],
   providers: [

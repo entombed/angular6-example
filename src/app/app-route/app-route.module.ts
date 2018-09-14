@@ -7,6 +7,7 @@ import { FormComponent } from '@components/form/form.component';
 
 const appRoutes: Routes = [
   { path: '', component: MainPageComponent },
+  { path: 'clientServer', loadChildren: '@components/clent-server-page/client-server.module#ClientServerModule'},
   { path: 'form', component: FormComponent },
   // { path: '**', component: MainPageComponent }
 ];
