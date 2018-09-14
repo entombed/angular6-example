@@ -1,8 +1,8 @@
 <p appBgcRed>
   main works!
 </p>
-<button routerLink="/anima-main" class="btn btn-info">Anima Main</button>
-<button routerLink="page1" class="btn btn-primary">Page1</button>
-<button routerLink="page2" class="btn btn-primary">Page2</button>
+<button routerLink="/anima-main" routerLinkActive ="active" [routerLinkActiveOptions]="{exact: true}" class="btn btn-info">Anima Main</button>
+<button routerLink="page1" routerLinkActive ="active" class="btn btn-primary">Page1</button>
+<button routerLink="page2" routerLinkActive ="active" class="btn btn-primary">Page2</button>
 <hr>
 <router-outlet></router-outlet>

@@ -12,15 +12,16 @@ import { trigger, state, style, transition, animate } from '@angular/animations'
         backgroundColor: 'blue',
         width: '150px',
         height: '150px',
+        color: '#fff'
       })),
       state('end', style({
         backgroundColor: 'red',
         width: '300px',
-        height: '300px'
+        height: '300px',
+        color: 'greenyellow'
       })),
       transition('start => end', animate(1500)),
-      transition('end => start', animate('800ms 0.5s ease-out')),
-
+      transition('end => start', animate('800ms 0.5s ease-out'))
     ])
   ]
 })
