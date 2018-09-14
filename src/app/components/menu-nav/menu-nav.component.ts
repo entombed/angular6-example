@@ -69,6 +69,10 @@ export class MenuNavComponent implements OnInit {
       {
         "name": "app-client-server",
         "link": "/clientServer"
+      },
+      {
+        "name": "app-ex-animation",
+        "link": "/anima-main"
       }
     ];
   }
