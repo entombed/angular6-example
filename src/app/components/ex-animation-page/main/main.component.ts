@@ -8,6 +8,11 @@ import { Component, OnInit } from '@angular/core';
 export class MainComponent implements OnInit {
 
   constructor() { }
+  styleParams = {
+    'background-color': 'blue',
+    'color': 'red',
+    'font-size': '30px'
+  };
 
   ngOnInit() {
   }

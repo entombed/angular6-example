@@ -1,3 +1,8 @@
 <p>
   page2 works!
 </p>
+<button class="btn btn-info" (click)="showAlert()">Показать</button>
+<hr>
+<div *ngIf="visible" class="alert alert-primary" [@HideShowAnimation]="'show'">
+  A simple primary alert—check it out!
+</div>

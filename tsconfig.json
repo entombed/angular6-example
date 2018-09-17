@@ -21,7 +21,8 @@
       "@components/*":["app/components/*"],
       "@directives/*":["app/directives/*"],
       "@services/*":["app/services/*"],
-      "@pipes/*":["app/pipes/*"]
+      "@pipes/*":["app/pipes/*"],
+      "@animations/*":["app/animations/*"]
     }
   }
 }
