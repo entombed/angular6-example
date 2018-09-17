@@ -3,6 +3,6 @@
 </p>
 <button class="btn btn-info" (click)="showAlert()">Показать</button>
 <hr>
-<div *ngIf="visible" class="alert alert-primary" [@HideShowAnimation]="'show'">
+<div *ngIf="visible" class="alert alert-primary" @HideShowAnimation>
   A simple primary alert—check it out!
 </div>
