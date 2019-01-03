@@ -28,6 +28,7 @@ export class PipeFilterComponent implements OnInit {
     ]
   }
 
+  num = 40.55;
   setTxt(data) {
     console.dir(data)
     this._messageService.setMessage(data);

@@ -23,12 +23,13 @@ import { MessageService } from '@services/message.service';
 import { CarsService } from '@services/cars.service';
 
 
+
 @NgModule({
   declarations: [
     AppComponent,
     FormComponent,
     MenuNavComponent,
-    MainPageComponent,
+    MainPageComponent
   ],
   imports: [
     BrowserModule,

@@ -8,3 +8,21 @@
 </ul>
 <button class="btn btn-primary" (click)="setTxt(RefInput.value)">ADD</button>
 <button class="btn btn-primary" (click)="getTxt()">SHOW</button>
+<p>
+  {{num}} (10) = {{num | roundingPipe:10}}
+</p>
+<p>
+  'aaaa' = {{'aaaa' | roundingPipe:10}}
+</p>
+<p>
+  1.1234567890123 (default) = {{1.1234567890123 | roundingPipe}}
+</p>
+<p>
+  101.0002222334234324 (5, ",") = {{101.0002222334234324 | roundingPipe:5 : ","}}
+</p>
+<p>
+  3 (default) = {{3 | roundingPipe}}
+</p>
+<p>
+  2 (5, ",") = {{2 | roundingPipe:5 : ","}}
+</p>

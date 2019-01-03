@@ -1,28 +1,33 @@
-import { trigger, state, style, transition, animate } from '@angular/animations';
+import { trigger, state, style, transition, animate, keyframes } from '@angular/animations';
 
 export const HideShowAnimation = trigger ('HideShowAnimation', [
     transition(':enter', [
       style({
         opacity: 0,
-        transform: 'rotateY(45deg)'
+        transform: 'translateX(-100%)',
       }),
       animate(500, style({
         opacity: 1,
-        transform: 'rotateY(0deg)'
+        transform: 'translateX(0)'
       }))
     ]),
     transition(':leave', [
-      style({
-        opacity: 1
-      }),
-      animate(1000, style({
-        opacity: 0.5,
-        transform: 'rotateX(45deg)'
-      })),
-      animate(1000, style({
-        opacity: 0.7,
-        transform: 'rotateX(90deg)'
-      })),
+      animate(1000, keyframes([
+        style({
+          transform: 'translateX(-10%)',
+          offset: 0
+        }),
+        style({
+          opacity: 0.7,
+          transform: 'rotateX(45deg)',
+          offset: 0.7
+        }),
+        style({
+          opacity: 0.5,
+          transform: 'rotateX(90deg) translateX(100%)',
+          offset: 1
+        })
+      ]))
     ])
   ]
 );
